@@ -35,10 +35,21 @@ main {
 #status {
   text-align: right;
   font-size: 1.2rem;
-  color: white
+  color: white;
+  padding: 10px 10px 0 0;
 }
 img {
   border-radius: 50%;
+  border: lightpink 5px solid;
+}
+
+h1 {
+  font-size: 3rem;
+  padding: 20px 0;
+}
+
+h1, p {
+  margin: 0 auto;
 }
 
 
