@@ -18,51 +18,127 @@ html {
 }
 
 body {
-  background-color: #9067C6;
+  background-color: rgb(9, 109, 103);
 /* Use a system font, if none are available use an available sans-sarif   font */
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: black;
 }
 
 main {
-  width: 350px;
-  background: purple;
-  font-size: 2rem;
+  width: 200px;
+  background: rgb(254, 254, 254);
+  font-size: 1.5rem;
   text-align: center;
 }
 
 #status {
   text-align: right;
-  font-size: 1.2rem;
-  color: white;
+  font-size: 1rem;
+  color: rgb(120, 120, 120);
   padding: 10px 10px 0 0;
 }
 img {
   border-radius: 50%;
-  border: lightpink 5px solid;
-}
-
-h1 {
-  font-size: 3rem;
-  padding: 20px 0;
+  border: rgb(96, 171, 107) 3px solid;
+  width: 100px;
 }
 
 h1, p {
   margin: 0 auto;
 }
+#name {
+  display: flex;
+  font-size: 2rem;
+  padding: 5px;
+  margin: 0;
+  justify-content: center;
+}
+#occupation {
+  background-color: rgba(82, 82, 82, 0.42);
+  padding: 12px;
+}
 
+#brand {
+  display: none;
+}
 
+#offer {
+  padding: 15px 0;
+  font-size: 1.2rem;
+}
+#contact {
+  display: flex;
+}
+
+#contact > p{
+  height: 70px;
+  width: 50%;
+  padding: 5px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#contact > :first-child{
+  background-color: rgba(28, 125, 43, 0.571);
+}
+#contact > :last-child{
+  background-color: rgba(16, 125, 29, 0.701);
+}
 
 @media only screen and (min-width: 768px) {
-  body {
-    /* tablet - two column display */
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: 50px auto 30px;
+  main {
+    display: grid;
+    text-align: left;
+    width: 500px;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: auto auto auto auto;
     grid-template-areas: 
-      "header header"
-      "side content"
-      "footer footer";
-      color:red
+      "status name"
+      "img title"
+      "img description" 
+      "contact price";
+  }
+  #status {
+    text-align: left;
+    padding: 5px 0 0 5px;
+  }
+
+  img {
+    grid-area: img;
+    margin: 15px auto;
+  }
+  
+  #name {
+    grid-area: name;
+    text-align: left;
+  }
+  
+  #name, #occupation, #brand, #offer {
+    text-align: left;
+    justify-content: left;
+    padding-left: 15px;
+    background-color:rgb(205, 205, 205);
+  }
+
+  #brand {
+    display: unset;
+    grid-area: description;
+    border-left: rgb(44, 176, 8) 4px solid;
+    padding-left: 10px;
+  }
+  
+  #contact {
+    grid-area: contact;
+  }
+
+  #offer {
+    padding: 20px 0 0 10px;
   }
 }
