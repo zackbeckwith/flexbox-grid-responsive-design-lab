@@ -128,7 +128,9 @@ h1, p {
   }
 
   #brand {
-    display: unset;
+    display: inline;
+  }
+  #brand > p {
     grid-area: description;
     border-left: rgb(44, 176, 8) 4px solid;
     padding-left: 10px;
